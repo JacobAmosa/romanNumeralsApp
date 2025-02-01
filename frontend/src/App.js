@@ -1,5 +1,5 @@
 import React from 'react';
-import RomanNumeralsConverter from "./components/RomanNumeralsConverter";
+import RomanNumeralsConverter from "./components/RomanNumeralsConverter/RomanNumeralsConverter";
 
 function App() {
   return < RomanNumeralsConverter />;

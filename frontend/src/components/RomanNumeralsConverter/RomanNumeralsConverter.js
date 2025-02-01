@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import { Provider, defaultTheme, TextField, Button, Form, Heading, Flex, Text } from "@adobe/react-spectrum";
+import React, {useEffect, useState} from "react";
+import { Provider, defaultTheme, darkTheme, TextField, Button, Form, Heading, Flex, Text } from "@adobe/react-spectrum";
 
 const RomanNumeralsConverter = () => {
-    const [formData, setFormData] = useState({
-        number: "",
-    });
+    const [formData, setFormData] = useState({ number: "" });
     const [romanNumeral, setRomanNumeral] = useState("");
     const [error, setError] = useState("");
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setIsDarkMode(savedTheme === "dark");
+        }
+    }, []);
 
     const handleChange = (key, value) => {
         setFormData((prev) => ({ ...prev, [key]: value }));
@@ -31,7 +37,7 @@ const RomanNumeralsConverter = () => {
     };
 
     return (
-        <Provider theme={defaultTheme}>
+        <Provider theme={isDarkMode ? darkTheme : defaultTheme}>
             <Flex direction="column" alignItems="center" justifyContent="center" height="100vh">
                 <Form aria-labelledby="form-title" onSubmit={handleSubmit} width="size-3600">
                     <Heading level={2} id="form-title">
