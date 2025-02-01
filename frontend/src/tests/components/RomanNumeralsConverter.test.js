@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import RomanNumeralsConverter from '../../components/RomanNumeralsConverter/RomanNumeralsConverter';
+import RomanNumeralsConverter from '../../components/RomanNumeralsConverter/RomanNumeralsConverter'
 
 test('renders the Roman Numerals Converter form', () => {
     render(<RomanNumeralsConverter />);

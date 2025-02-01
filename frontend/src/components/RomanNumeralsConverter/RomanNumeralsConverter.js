@@ -7,6 +7,7 @@ const RomanNumeralsConverter = () => {
     const [error, setError] = useState("");
     const [isDarkMode, setIsDarkMode] = useState(false);
 
+    // Retrieve system theme setting from local storage when the component mounts.
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme) {
@@ -14,13 +15,16 @@ const RomanNumeralsConverter = () => {
         }
     }, []);
 
+    // Update the state of formData everytime user input changes.
     const handleChange = (key, value) => {
         setFormData((prev) => ({ ...prev, [key]: value }));
     };
 
+    // Called when the user submits the form.
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // Call our romannumeral API to perform the conversion.
             const response = await fetch(`http://localhost:8080/romannumeral?query=${formData.number}`);
             const data = await response.json();
             if (response.ok) {
@@ -37,6 +41,7 @@ const RomanNumeralsConverter = () => {
     };
 
     return (
+        // conditionally choose the theme in the provider.
         <Provider theme={isDarkMode ? darkTheme : defaultTheme}>
             <Flex direction="column" alignItems="center" justifyContent="center" height="100vh">
                 <Form aria-labelledby="form-title" onSubmit={handleSubmit} width="size-3600">

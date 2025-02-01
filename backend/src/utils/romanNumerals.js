@@ -1,5 +1,5 @@
 const convertToRoman = (num) => {
-    // Array containing the different roman numeral symbols.
+    // Array containing different roman numeral symbols.
     const romanValues = [
         { value: 1000, numeral: 'M' },
         { value: 900, numeral: 'CM' },
