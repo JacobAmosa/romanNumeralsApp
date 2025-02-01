@@ -20,23 +20,24 @@ It provides validation for valid inputs (between 1 and 3999) and handles errors 
 ## Build and run in Docker:
 - clone the repository: `git clone git@github.com:JacobAmosa/romanNumeralsApp.git`
 - `cd romanNumeralsApp`
-- create a `.env` file at the root of the project and add credentials found in email.
+- Add the two ENV variables using the two commands found in the email.
+- Start running Docker Desktop on your machine.
 - run `docker build -t roman-numerals-app .` to build the docker image.
 - run `docker run -p 8080:8080 roman-numerals-app` to run the docker container.
 - **Setting Up Prometheus for Monitoring:**
   - run `docker run -d \
   -p 9090:9090 \
   -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" \
-  prom/prometheus` from the root directory to start up prometheus docker container.
+  prom/prometheus` from the root directory to start up prometheus docker container (No spaces after backslashes).
   - Access prometheus dashboard from `http://localhost:9090`.
 - open the app at `http://localhost:8080`
 
 ## Build and run in Node:
 - clone the repository: `git clone git@github.com:JacobAmosa/romanNumeralsApp.git`
 - `cd romanNumeralsApp`
-- `cd frontend` and run `npm install` to install dependencies.
-- run `npm run build` to bundle to frontend code.
-- `cd ../backend` run `npm install` to install dependencies.
+- run `npm install` to install dependencies.
+- `cd frontend` and run `npm install` to install dependencies in the frontend folder.
+- run `npm run build` to bundle the frontend code.
 - run `npm run start` in the backend folder to run the server.
 - open the app at `http://localhost:8080`
 
