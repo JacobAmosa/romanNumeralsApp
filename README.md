@@ -25,9 +25,9 @@ It provides validation for valid inputs (between 1 and 3999) and handles errors 
 - run `docker build -t roman-numerals-app .` to build the docker image.
 - run `docker run -p 8080:8080 roman-numerals-app` to run the docker container.
 - **Setting Up Prometheus for Monitoring:**
-  - run `docker run -d \
-  -p 9090:9090 \
-  -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" \
+  - run `docker run -d \<br>
+  -p 9090:9090 \<br>
+  -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" \<br>
   prom/prometheus` from the root directory to start up prometheus docker container (No spaces after backslashes).
   - Access prometheus dashboard from `http://localhost:9090`.
 - open the app at `http://localhost:8080`
