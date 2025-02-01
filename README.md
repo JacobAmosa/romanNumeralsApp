@@ -54,7 +54,7 @@ It provides validation for valid inputs (between 1 and 3999) and handles errors 
 
 **Root (/):** The root of my project contains the Dockerfile (creates docker image), prometheus.yml (config file for monitoring), and the package.json (dependencies used throughout the app).
 
-**Tests (frontend/src/tests/components/ & backend/tests/):** Both folder contain test files. 
+**Tests (frontend/src/tests/components/ & backend/tests/):** Both folders contain test files. 
 
 
 ## Dependency Attribution
